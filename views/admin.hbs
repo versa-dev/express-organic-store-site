@@ -1,0 +1,47 @@
+<nav class="navbar fixed-top navbar-dark navbar-expand-md bg-success text-white">
+  <a class="text-white navbar-brand" href="/">
+    <i class="fab fa-pagelines"></i> Organic Store
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto menu">
+
+    </ul>
+  </div>
+</nav>
+<div class="container mt-4">
+  <main role="main">
+    <div class="row">
+      <div class="col">
+        <h1>Orders</h1>
+        <div class="table-responsive-sm">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Order</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each order}}
+                <tr>
+                  <td>{{this.id}}</td>
+                  <td>{{this.order}}</td>
+                  <td>{{this.total}}</td>
+                  <td>
+                    <a class="btn btn-primary" href="/order/{{this._id}}">Update</a>
+                    <a class="btn btn-danger" href="/order/delete/{{this._id}}">Delete</a>
+                  </td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
